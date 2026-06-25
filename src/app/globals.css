@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* MullAgain design tokens — premium golf-course palette: fairway green, white,
+   charcoal, with a warm sand accent. */
+@theme {
+  --color-fairway-50: #f0f7f1;
+  --color-fairway-100: #dceede;
+  --color-fairway-200: #bbddc0;
+  --color-fairway-300: #8ec497;
+  --color-fairway-400: #5aa367;
+  --color-fairway-500: #3a8549;
+  --color-fairway-600: #2b6b39;
+  --color-fairway-700: #23552f;
+  --color-fairway-800: #1d4427;
+  --color-fairway-900: #173620;
+  --color-sand-100: #f7f1e3;
+  --color-sand-300: #e7d3a8;
+  --color-sand-500: #cdaa63;
+
+  --color-ink: #14181b;
+  --color-muted: #5b6770;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: var(--color-ink);
+  --card: #ffffff;
+  --border: #e6e9eb;
+  --radius: 0.625rem;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* utility: hide scrollbar for horizontal filter rails */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
