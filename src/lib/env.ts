@@ -17,6 +17,10 @@ const schema = z.object({
   // Bearer secret guarding the maintenance/cron endpoint.
   CRON_SECRET: z.string().optional(),
 
+  // Google OAuth (optional sign-in provider).
+  GOOGLE_CLIENT_ID: z.string().optional(),
+  GOOGLE_CLIENT_SECRET: z.string().optional(),
+
   STRIPE_SECRET_KEY: z.string().optional(),
   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string().optional(),
   STRIPE_WEBHOOK_SECRET: z.string().optional(),
@@ -71,6 +75,8 @@ export const isStripeConfigured = () =>
 export const isS3Configured = () =>
   Boolean(env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY && env.S3_BUCKET);
 export const isEmailConfigured = () => Boolean(env.RESEND_API_KEY);
+export const isGoogleAuthConfigured = () =>
+  Boolean(env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET);
 export const isSmsConfigured = () =>
   Boolean(
     env.TWILIO_ACCOUNT_SID &&
